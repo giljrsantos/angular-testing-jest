@@ -1,27 +1,95 @@
-# AngularTesting
+# Angular Testing Jest
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+## 📌 Sobre o Projeto
 
-## Development server
+Este projeto tem como objetivo demonstrar a implementação de testes unitários em uma aplicação Angular utilizando o framework Jest. Nele, são abordados testes para componentes, pipes, serviços e diretivas, garantindo a qualidade e confiabilidade do código.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Tecnologias Utilizadas
+- Angular 17 - Framework principal para o desenvolvimento da aplicação.
+- Jest - Framework de testes unitários para JavaScript/TypeScript.
+- Node.js 18 - Ambiente de execução para o Angular CLI.
+- TypeScript - Linguagem utilizada para desenvolvimento.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## 🛠️ Configuração e Instalação
+### 1. Clone este repositório:
+```sh
+git clone https://github.com/seu-usuario/angular-testing-jest.git
+cd angular-testing-jest
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 2. Instale as dependências:
+```sh
+npm install
+```
 
-## Running unit tests
+### 2. Execute os testes:
+```sh
+npm test
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🧪 Implementação dos Testes
 
-## Running end-to-end tests
+### 🔹 Testes de Serviços
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Os serviços são testados garantindo que suas funções retornem os valores esperados e utilizem corretamente injeções de dependência.
 
-## Further help
+Exemplo:
+```typescript
+import { MeuService } from './meu.service';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+describe('MeuService', () => {
+  let service: MeuService;
+
+  beforeEach(() => {
+    service = new MeuService();
+  });
+
+  it('deve retornar a soma correta', () => {
+    expect(service.somar(2, 3)).toBe(5);
+  });
+});
+
+```
+
+## 🏗️ Estrutura do Projeto
+
+```graphql
+angular-testing-jest/
+│── src/
+│   ├── app/
+│   │   ├── components/
+│   │   ├── corre/
+│   │   │   ├── services/
+|   |   |   |   |────── add-car/
+│   │   │   │   ├──────────── add-car.service.ts
+│   │   │   │   ├──────────── add-car.service.spec.ts
+|   |   |   |   |────── search-cars/
+│   │   │   │   ├──────────────── search-cars.service.ts
+│   │   │   │   ├──────────────── search-cars.service.spec.ts
+│   │   ├── shared/
+│   │   │   ├── interface/
+│   │   │   │   ├──────────── i-add-car-request.ts
+│   │   │   │   ├──────────── i-search-car-request.ts
+│   │   │   │   ├──────────── i-search-car-response.ts
+│   ├── assets/
+│   │   ├── img/
+│   │   ├── mock/
+│   │   │   │   ├──────────── m-add-car.mock.ts
+│   │   │   │   ├──────────── m-cars-request.mock.ts
+│   │   │   │   ├──────────── m-cars-response.mock.ts
+│   ├── environments/
+│── jest.config.js
+│── package.json
+│── README.md
+
+```
+
+## 📌 Contribuições
+
+Fique à vontade para abrir issues e pull requests caso tenha sugestões ou melhorias para o projeto!
+
+
+
+<h1 align="center">💻 Desenvolvido Por: Gilberto Júnior</h1>
