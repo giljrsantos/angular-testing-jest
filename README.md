@@ -63,22 +63,22 @@ angular-testing-jest/
 │   │   ├── corre/
 │   │   │   ├── services/
 |   |   |   |   |────── add-car/
-│   │   │   │   |   |   |   |──────────── add-car.service.ts
-│   │   │   │   |   |   |   |──────────── add-car.service.spec.ts
+│   │   │   │   |   |   | |──────────── add-car.service.ts
+│   │   │   │   |   |   | |──────────── add-car.service.spec.ts
 |   |   |   |   |────── search-cars/
-│   │   │   │   |   |   |   |──────────────── search-cars.service.ts
-│   │   │   │   |   |   |   |──────────────── search-cars.service.spec.ts
+│   │   │   │   |   |   | |──────────────── search-cars.service.ts
+│   │   │   │   |   |   | |──────────────── search-cars.service.spec.ts
 │   │   ├── shared/
 │   │   │   ├── interface/
-│   │   │   |   |   |   |──────────── i-add-car-request.ts
-│   │   │   |   |   |   |──────────── i-search-car-request.ts
-│   │   │   |   |   |   |──────────── i-search-car-response.ts
+│   │   │   |   | |──────────── i-add-car-request.ts
+│   │   │   |   | |──────────── i-search-car-request.ts
+│   │   │   |   | |──────────── i-search-car-response.ts
 │   ├── assets/
 │   │   ├── img/
 │   │   ├── mock/
-│   │   │   │   ├──────────── m-add-car.mock.ts
-│   │   │   │   ├──────────── m-cars-request.mock.ts
-│   │   │   │   ├──────────── m-cars-response.mock.ts
+│   │   │   │ ├──────────── m-add-car.mock.ts
+│   │   │   │ ├──────────── m-cars-request.mock.ts
+│   │   │   │ ├──────────── m-cars-response.mock.ts
 │   ├── environments/
 │── jest.config.js
 │── package.json
