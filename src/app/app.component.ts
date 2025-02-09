@@ -9,5 +9,5 @@ imports:[RouterOutlet],
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-testing';
+  //title = 'angular-testing';
 }
