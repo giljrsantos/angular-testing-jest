@@ -1,5 +1,4 @@
-export interface ISearchCarResponse {
-  id: number;
+export interface IAddCarRequest {
   brand: string;
   model: string;
   year: number;

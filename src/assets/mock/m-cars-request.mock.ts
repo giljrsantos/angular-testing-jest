@@ -1,5 +1,5 @@
-import { ICarRequest } from "../../app/shared/interface/i-search-car-request";
+import { ISearchCarRequest } from "../../app/shared/interface/i-search-car-request";
 
-export const mockCarsRequest: ICarRequest = {
+export const mockCarsRequest: ISearchCarRequest = {
   id: 1
 }

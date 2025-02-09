@@ -1,6 +1,6 @@
-import { ICarResponse } from "../../app/shared/interface/i-search-car-response";
+import { ISearchCarResponse } from "../../app/shared/interface/i-search-car-response";
 
-export const mockCars: ICarResponse[] = [
+export const mockCars: ISearchCarResponse[] = [
   {
     id: 1,
     brand: 'Toyota',

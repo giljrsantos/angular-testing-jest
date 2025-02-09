@@ -1,3 +1,3 @@
-export interface ICarRequest{
+export interface ISearchCarRequest{
   id: number;
 }
