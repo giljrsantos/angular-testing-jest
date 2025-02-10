@@ -1,8 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 import { AddCarService } from './add-car.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { mockCar } from '../../../../assets/mock/m-add-car.mock';
+import {
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
+
 import { of, throwError } from 'rxjs';
+import { mockCar } from '../../../../assets/mock/m-add-car.mock';
 
 describe('AddCarService', () => {
   let service: AddCarService;
@@ -31,11 +35,16 @@ describe('AddCarService', () => {
   });
 
   it('deve chamar o método de função addCar() POST', () => {
-    const httpSpy = jest.spyOn(httpClient, 'post').mockReturnValue(of({}));
+    const httpSpy = jest
+      .spyOn(httpClient, 'post')
+      .mockReturnValue(of({}));
     service.addCar(mockCar).subscribe(() => {
-      expect(httpSpy).toHaveBeenCalledWith('http://localhost:3000/add-car', mockCar);
+      expect(httpSpy).toHaveBeenCalledWith(
+        'http://localhost:3000/add-car',
+        mockCar,
+      );
       expect(httpSpy).toHaveBeenCalledTimes(1);
-      expect(httpSpy).toHaveBeenCalled()
+      expect(httpSpy).toHaveBeenCalled();
     });
   });
 
@@ -54,5 +63,4 @@ describe('AddCarService', () => {
       expect(res).toBeUndefined();
     });
   });
-
 });

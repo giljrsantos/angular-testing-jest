@@ -22,6 +22,14 @@
       "ES2022",
       "dom"
     ],
+    "baseUrl": "./",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@env/*": ["src/environments/*"],
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@assets/*": ["src/assets/*"]
+    },
     "types": [
       "jest",
       "node"

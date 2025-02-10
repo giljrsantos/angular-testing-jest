@@ -6,7 +6,11 @@ import { CommonModule } from '@angular/common';
 describe('AppComponent', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, AppComponent, CommonModule],
+      imports: [
+        RouterTestingModule,
+        AppComponent,
+        CommonModule,
+      ],
       //declarations: [AppComponent],
     }),
   );
@@ -20,9 +24,7 @@ describe('AppComponent', () => {
   it(`should have as title 'angular-testing'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const component = fixture.componentInstance;
-    expect(component.title).toEqual(
-     'angular-testing',
-    );
+    expect(component.title).toEqual('angular-testing');
   });
 
   // it('should render title', () => {

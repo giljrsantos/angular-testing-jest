@@ -1,4 +1,4 @@
-import { ISearchCarResponse } from "../../app/shared/interface/i-search-car-response";
+import { ISearchCarResponse } from '../../app/shared/interface/i-search-car-response';
 
 export const mockCars: ISearchCarResponse[] = [
   {
@@ -9,7 +9,8 @@ export const mockCars: ISearchCarResponse[] = [
     color: 'Prata',
     price: 120000,
     img: 'https://example.com/corolla.jpg',
-    description: 'Sedan médio com excelente custo-benefício e baixo consumo de combustível.'
+    description:
+      'Sedan médio com excelente custo-benefício e baixo consumo de combustível.',
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ export const mockCars: ISearchCarResponse[] = [
     color: 'Preto',
     price: 135000,
     img: 'https://example.com/civic.jpg',
-    description: 'Sedan esportivo com design moderno e ótimo desempenho.'
+    description:
+      'Sedan esportivo com design moderno e ótimo desempenho.',
   },
   {
     id: 3,
@@ -29,7 +31,8 @@ export const mockCars: ISearchCarResponse[] = [
     color: 'Branco',
     price: 150000,
     img: 'https://example.com/golf.jpg',
-    description: 'Hatchback premium com acabamento refinado e tecnologia de ponta.'
+    description:
+      'Hatchback premium com acabamento refinado e tecnologia de ponta.',
   },
   {
     id: 4,
@@ -39,7 +42,8 @@ export const mockCars: ISearchCarResponse[] = [
     color: 'Azul',
     price: 380000,
     img: 'https://example.com/x3.jpg',
-    description: 'SUV de luxo com alto desempenho e máximo conforto.'
+    description:
+      'SUV de luxo com alto desempenho e máximo conforto.',
   },
   {
     id: 5,
@@ -49,6 +53,7 @@ export const mockCars: ISearchCarResponse[] = [
     color: 'Cinza',
     price: 350000,
     img: 'https://example.com/c200.jpg',
-    description: 'Sedan executivo com luxo, conforto e tecnologia de última geração.'
-  }
+    description:
+      'Sedan executivo com luxo, conforto e tecnologia de última geração.',
+  },
 ];

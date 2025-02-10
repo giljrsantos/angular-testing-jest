@@ -1,14 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SearchCarsService } from './search-cars.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
 
 import { throwError } from 'rxjs';
+import { SearchCarsService } from './search-cars.service';
 import { mockCars } from '../../../../assets/mock/m-cars-response.mock';
 
 describe('SearchCarsService', () => {
   let service: SearchCarsService;
-  let httpClient: HttpClient
+  let httpClient: HttpClient;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -23,10 +26,9 @@ describe('SearchCarsService', () => {
   });
 
   describe('getCarsId', () => {
-
     it('deve retornar um carro específico ao pesquisar por id usando a API getCars', () => {
       const id = 1;
-      service.getCarsId({id}).subscribe((res) => {
+      service.getCarsId({ id }).subscribe((res) => {
         expect(res).toEqual(mockCars[0]);
       });
     });
@@ -36,11 +38,10 @@ describe('SearchCarsService', () => {
       const id = 1;
       const spy = jest.spyOn(httpClient, 'get');
       spy.mockReturnValueOnce(throwError(() => error));
-      service.getCarsId({id}).subscribe((res) => {
+      service.getCarsId({ id }).subscribe((res) => {
         expect(res).toBeUndefined();
       });
     });
-
   });
 
   describe('getCars', () => {
@@ -59,5 +60,4 @@ describe('SearchCarsService', () => {
       });
     });
   });
-
 });
