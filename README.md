@@ -68,6 +68,9 @@ angular-testing-jest/
 |   |   |   |   |────── search-cars/
 │   │   │   │   |   |   | |──────────────── search-cars.service.ts
 │   │   │   │   |   |   | |──────────────── search-cars.service.spec.ts
+|   |   |   |   |────── update-car/
+│   │   │   │   |   |   | |──────────────── update-car.service.ts
+│   │   │   │   |   |   | |──────────────── update-car.service.spec.ts
 │   │   ├── shared/
 │   │   │   ├── interface/
 │   │   │   |   | |──────────── i-add-car-request.ts
