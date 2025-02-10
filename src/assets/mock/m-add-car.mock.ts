@@ -1,6 +1,7 @@
 import { IAddCarRequest } from '../../app/shared/interface/i-add-car-request';
 
 export const mockCar: IAddCarRequest = {
+  id: 1,
   brand: 'Volkswagen',
   model: 'Golf',
   year: 2021,

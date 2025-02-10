@@ -1,4 +1,5 @@
 export interface IAddCarRequest {
+  id: number;
   brand: string;
   model: string;
   year: number;
