@@ -1,6 +1,7 @@
-import { IAddCarRequest } from '../../app/shared/interface/i-add-car-request';
+import { IUpdateCarRequest } from '@app/shared/interface/i-update-car-request';
 
-export const mockCar: IAddCarRequest = {
+export const mockUpdateCar: IUpdateCarRequest = {
+  id: 1,
   brand: 'Volkswagen',
   model: 'Golf',
   year: 2021,

@@ -1,3 +1,4 @@
+import { mockUpdateCar } from './../../../../assets/mock/m-update-car.mock';
 import { TestBed } from '@angular/core/testing';
 
 import { UpdateCarService } from './update-car.service';
@@ -6,7 +7,7 @@ import {
   HttpClientModule,
 } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
-import { mockCar } from '../../../../assets/mock/m-add-car.mock'
+import { mockCar } from '../../../../assets/mock/m-add-car.mock';
 import { mockCarsRequest } from '../../../../assets/mock/m-cars-request.mock';
 
 describe('UpdateCarService', () => {
@@ -25,26 +26,24 @@ describe('UpdateCarService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('deve atualizar um carro com um id', () => {
-    service.updateCar(mockCar).subscribe((res) => {
-      expect(res).toEqual(mockCar);
-    });
-  });
-
   it('deve chamar http put para atualizar os dados do carro', () => {
+    const id: number = 1;
     jest.spyOn(httpClient, 'put');
-    service.updateCar(mockCar).subscribe((res) => {
-      expect(res).toEqual(mockCar);
-    });
+    service
+      .updateCar(id, mockUpdateCar)
+      .subscribe((res) => {
+        expect(res).toEqual(mockCar);
+      });
   });
 
   it('deve chamar o método de função updateCar() PUT', () => {
+    const id: number = 1;
     const httpSpy = jest
       .spyOn(httpClient, 'put')
       .mockReturnValue(of({}));
-    service.updateCar(mockCar).subscribe(() => {
+    service.updateCar(id, mockUpdateCar).subscribe(() => {
       expect(httpSpy).toHaveBeenCalledWith(
-        'http://localhost:3000/update-car',
+        `http://localhost:3000/update-car/${id}`,
         mockCarsRequest,
       );
       expect(httpSpy).toHaveBeenCalledTimes(1);
@@ -53,11 +52,14 @@ describe('UpdateCarService', () => {
   });
 
   it('deve lidar com erro ao atualizar um carro', () => {
+    const id: number = 1;
     const error = new Error('error');
     const spy = jest.spyOn(httpClient, 'put');
     spy.mockReturnValueOnce(throwError(() => error));
-    service.updateCar(mockCar).subscribe((res) => {
-      expect(res).toBeUndefined();
-    });
+    service
+      .updateCar(id, mockUpdateCar)
+      .subscribe((res) => {
+        expect(res).toBeUndefined();
+      });
   });
 });

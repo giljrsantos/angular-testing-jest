@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IAddCarRequest } from '@app/shared/interface/i-add-car-request';
 import { ISearchCarResponse } from '@app/shared/interface/i-search-car-response';
+import { IUpdateCarRequest } from '@app/shared/interface/i-update-car-request';
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +11,8 @@ export class UpdateCarService {
     'http://localhost:3000/update-car';
   constructor(private http: HttpClient) {}
 
-  updateCar(bodyUpdateCar: IAddCarRequest) {
-    const url = `${this.urlBff}`;
+  updateCar(id: number, bodyUpdateCar: IUpdateCarRequest) {
+    const url = `${this.urlBff}/${id}`;
     return this.http.put<ISearchCarResponse>(
       url,
       bodyUpdateCar,
