@@ -11,4 +11,9 @@ export class DeleteCarService {
   constructor(
     private httpClient: HttpClient
   ) { }
+
+  deleteCar(id: number){
+    const url = `${this.urlBff}/${id}`;
+    return this.httpClient.delete(url);
+  }
 }
