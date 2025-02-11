@@ -19,11 +19,11 @@ describe('DeleteCarService', () => {
     httpClient = TestBed.inject(HttpClient);
   });
 
-  it('should be created', () => {
+  it('deve criar a  service', () => {
     expect(service).toBeTruthy();
   });
 
-  it('delete car with id', () => {
+  it('deve deletar o carro com o id informado', () => {
     const id: number = 1;
     jest.spyOn(httpClient, 'delete');
     service.deleteCar(id).subscribe(() => {
@@ -31,12 +31,11 @@ describe('DeleteCarService', () => {
     });
   });
 
-  it('deve chamar o método de função deleteCar() DELETE na URL correta', () => {
+  it('deve chamar função deleteCar() DELETE na URL correta', () => {
     const id: number = 1;
     const httpClientSpy = jest
       .spyOn(httpClient, 'delete')
       .mockReturnValue(of({}));
-
     service.deleteCar(id).subscribe(() => {
       expect(httpClientSpy).toHaveBeenCalledWith([
         `http://localhost:3000/delete-car/${id}`,
@@ -46,13 +45,12 @@ describe('DeleteCarService', () => {
     });
   });
 
-  it('deve lidar com erro', () => {
+  it('deve lidar com erro ao deletar um carro', () => {
     const id: number = 1;
     const error = new Error('Erro ao deletar carro');
     const httpClientSpy = jest
       .spyOn(httpClient, 'delete')
       .mockReturnValueOnce(throwError(() => error));
-
     service.deleteCar(id).subscribe(() => {
       expect(httpClientSpy).toBeDefined();
     });

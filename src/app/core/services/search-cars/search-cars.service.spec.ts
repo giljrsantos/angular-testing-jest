@@ -72,7 +72,8 @@ describe('SearchCarsService', () => {
     it('deve lidar com erro 500 (Internal Server Error) quando buscar um array de carros', () => {
       const spy = jest.spyOn(httpClient, 'get');
       service.getCars().subscribe({
-        next: () => fail('Erro no servidor, Internal Server Error'),
+        next: () =>
+          fail('Erro no servidor, Internal Server Error'),
         error: (error) => expect(error.status).toBe(500),
       });
       expect(spy).toHaveBeenCalled();
@@ -86,6 +87,5 @@ describe('SearchCarsService', () => {
       });
       expect(spy).toHaveBeenCalled();
     });
-
   });
 });
