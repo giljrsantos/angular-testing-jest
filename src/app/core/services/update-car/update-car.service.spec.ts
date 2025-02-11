@@ -36,7 +36,7 @@ describe('UpdateCarService', () => {
       });
   });
 
-  it('deve chamar o método de função updateCar() PUT', () => {
+  it('deve chamar o método de função updateCar() PUT na URL correta', () => {
     const id: number = 1;
     const httpSpy = jest
       .spyOn(httpClient, 'put')
