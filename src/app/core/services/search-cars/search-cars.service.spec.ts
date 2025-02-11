@@ -59,5 +59,33 @@ describe('SearchCarsService', () => {
         expect(res).toBeUndefined();
       });
     });
+
+    it('deve lidar com erro 400 (bad request) quando buscar um array de carros', () => {
+      const spy = jest.spyOn(httpClient, 'get');
+      service.getCars().subscribe({
+        next: () => fail('Erro de requisição, Bad Request'),
+        error: (error) => expect(error.status).toBe(400),
+      });
+      expect(spy).toHaveBeenCalled();
+    });
+
+    it('deve lidar com erro 500 (Internal Server Error) quando buscar um array de carros', () => {
+      const spy = jest.spyOn(httpClient, 'get');
+      service.getCars().subscribe({
+        next: () => fail('Erro no servidor, Internal Server Error'),
+        error: (error) => expect(error.status).toBe(500),
+      });
+      expect(spy).toHaveBeenCalled();
+    });
+
+    it('deve lidar com erro 500 (Internal Server Error) quando buscar um array de carros', () => {
+      const spy = jest.spyOn(httpClient, 'get');
+      service.getCars().subscribe({
+        next: () => fail('Não encontrado, Not Found'),
+        error: (error) => expect(error.status).toBe(404),
+      });
+      expect(spy).toHaveBeenCalled();
+    });
+
   });
 });
