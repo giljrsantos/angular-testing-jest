@@ -47,7 +47,7 @@ describe('DeleteCarService', () => {
     service.deleteCar(id).subscribe(() => {
       expect(httpClientSpy).toBeDefined();
     })
-  })
+  });
 
 
 });
