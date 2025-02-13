@@ -79,10 +79,10 @@ describe('SearchCarsService', () => {
       expect(spy).toHaveBeenCalled();
     });
 
-    it('deve lidar com erro 500 (Internal Server Error) quando buscar um array de carros', () => {
+    it('deve lidar com erro 404 (Página não encontrada) quando buscar um array de carros', () => {
       const spy = jest.spyOn(httpClient, 'get');
       service.getCars().subscribe({
-        next: () => fail('Não encontrado, Not Found'),
+        next: () => fail('Página não encontrada'),
         error: (error) => expect(error.status).toBe(404),
       });
       expect(spy).toHaveBeenCalled();
