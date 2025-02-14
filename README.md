@@ -37,19 +37,87 @@ Os serviços são testados garantindo que suas funções retornem os valores esp
 
 Exemplo:
 ```typescript
-import { MeuService } from './meu.service';
+// user.service.ts
+import { Injectable } from '@angular/core';
+@Injectable({
+  providedIn: 'root',
+})
+export class UserService {
+  getUser() {
+    return { id: 1, name: 'John Doe' };
+  }
+}
 
-describe('MeuService', () => {
-  let service: MeuService;
+// user.service.spec.ts
+import { TestBed } from '@angular/core/testing';
+import { UserService } from './user.service';
+
+describe('UserService', () => {
+  let service: UserService;
 
   beforeEach(() => {
-    service = new MeuService();
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(UserService);
   });
 
-  it('deve retornar a soma correta', () => {
-    expect(service.somar(2, 3)).toBe(5);
+  it('deve ser criado', () => {
+    expect(service).toBeTruthy();
+  });
+
+  it('deve retornar um usuário com id e nome', () => {
+    const user = service.getUser();
+    expect(user).toEqual({ id: 1, name: 'John Doe' });
   });
 });
+
+
+```
+### 📌 Testando um Componente
+
+Testes unitários de componentes, garantem o correto funcionamento individual de cada componente, facilitando a detecção de erros e a manutenção do código.
+
+Exemplo:
+```ts
+// hello.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-hello',
+  standalone: true,
+  template: `<h1>{{ message }}</h1>`,
+})
+export class HelloComponent {
+  message = 'Hello, Angular!';
+}
+
+// hello.component.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HelloComponent } from './hello.component';
+
+describe('HelloComponent', () => {
+  let component: HelloComponent;
+  let fixture: ComponentFixture<HelloComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [HelloComponent],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(HelloComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('deve ser criado', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('deve exibir a mensagem "Hello, Angular!"', () => {    
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Angular!');
+  });
+});
+
 
 ```
 
@@ -60,6 +128,9 @@ angular-testing-jest/
 │── src/
 │   ├── app/
 │   │   ├── components/
+|   |   |   |   |─── search-cars/
+│   │   │   │   |   |   | |───── search-cars.component.ts
+│   │   │   │   |   |   | |───── search-cars.component.spec.ts
 │   │   ├── corre/
 │   │   │   ├── services/
 |   |   |   |   |────── add-car/
