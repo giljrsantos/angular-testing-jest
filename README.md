@@ -131,6 +131,9 @@ angular-testing-jest/
 |   |   |   |   |─── search-cars/
 │   │   │   │   |   |   | |───── search-cars.component.ts
 │   │   │   │   |   |   | |───── search-cars.component.spec.ts
+|   |   |   |   |─── add-car/
+│   │   │   │   |   |   | |───── add-car.component.ts
+│   │   │   │   |   |   | |───── add-car.component.spec.ts
 │   │   ├── corre/
 │   │   │   ├── services/
 |   |   |   |   |────── add-car/
