@@ -17,6 +17,11 @@ export class SearchCarsComponent{
 
   private readonly searchCars = inject(SearchCarsService);
 
+  /**
+   * Busca todos os carros na API e preenche a lista de carros.
+   *
+   * @returns void
+   */
   getSearchCars() {
     this.searchCars.getCars().subscribe({
       next: (cars) => {
@@ -26,6 +31,12 @@ export class SearchCarsComponent{
     });
   }
 
+  /**
+   * Busca os detalhes de um carro pelo seu ID..
+   *
+   * @param idCar - O objeto de solicitação contendo o ID do carro a ser pesquisado.
+   * @returns void
+   */
   getSearchCarById(idCar: ISearchCarRequest) {
     this.searchCars.getCarsId(idCar).subscribe({
       next: (car) => {
