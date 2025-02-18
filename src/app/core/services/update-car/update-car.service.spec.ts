@@ -30,7 +30,7 @@ describe('UpdateCarService', () => {
     const id: number = 1;
     jest.spyOn(httpClient, 'put');
     service
-      .updateCar(id, mockUpdateCar)
+      .updateCar(mockUpdateCar)
       .subscribe((res) => {
         expect(res).toEqual(mockCar);
       });
@@ -41,7 +41,7 @@ describe('UpdateCarService', () => {
     const httpSpy = jest
       .spyOn(httpClient, 'put')
       .mockReturnValue(of({}));
-    service.updateCar(id, mockUpdateCar).subscribe(() => {
+    service.updateCar(mockUpdateCar).subscribe(() => {
       expect(httpSpy).toHaveBeenCalledWith(
         `http://localhost:3000/update-car/${id}`,
         mockCarsRequest,
@@ -57,7 +57,7 @@ describe('UpdateCarService', () => {
     const spy = jest.spyOn(httpClient, 'put');
     spy.mockReturnValueOnce(throwError(() => error));
     service
-      .updateCar(id, mockUpdateCar)
+      .updateCar(mockUpdateCar)
       .subscribe((res) => {
         expect(res).toBeUndefined();
       });

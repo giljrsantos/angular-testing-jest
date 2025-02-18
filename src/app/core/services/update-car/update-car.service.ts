@@ -11,8 +11,8 @@ export class UpdateCarService {
     'http://localhost:3000/update-car';
   constructor(private http: HttpClient) {}
 
-  updateCar(id: number, bodyUpdateCar: IUpdateCarRequest) {
-    const url = `${this.urlBff}/${id}`;
+  updateCar(bodyUpdateCar: IUpdateCarRequest) {
+    const url = `${this.urlBff}/${bodyUpdateCar.id}`;
     return this.http.put<ISearchCarResponse>(
       url,
       bodyUpdateCar,
