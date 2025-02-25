@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ISearchCarResponse } from '@app/shared/interface/i-search-car-response';
-import { IUpdateCarRequest } from '@app/shared/interface/i-update-car-request';
+import { IUpdateCarRequest } from '../../../shared/interface/i-update-car-request';
+import { ISearchCarResponse } from '../../../shared/interface/i-search-car-response';
+
 
 @Injectable({
   providedIn: 'root',

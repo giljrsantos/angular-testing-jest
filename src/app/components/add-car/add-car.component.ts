@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { IAddCarRequest } from '@shared/interface/i-add-car-request';
-import { ISearchCarResponse } from '@shared/interface/i-search-car-response';
+
 import { AddCarService } from '../../core/services/add-car/add-car.service';
+import { ISearchCarResponse } from '../../shared/interface/i-search-car-response';
+import { IAddCarRequest } from '../../shared/interface/i-add-car-request';
 
 @Component({
   selector: 'app-add-car',

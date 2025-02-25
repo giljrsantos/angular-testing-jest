@@ -1,7 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SearchCarsService } from '../../core/services/search-cars/search-cars.service';
-import { ISearchCarRequest } from '@app/shared/interface/i-search-car-request';
-import { ISearchCarResponse } from '@app/shared/interface/i-search-car-response';
+import { ISearchCarResponse } from '../../shared/interface/i-search-car-response';
+import { ISearchCarRequest } from '../../shared/interface/i-search-car-request';
+
 
 @Component({
   selector: 'app-search-cars',
