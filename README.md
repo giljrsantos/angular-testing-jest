@@ -137,6 +137,9 @@ angular-testing-jest/
 |   |   |   |   |─── update-car/
 │   │   │   │   |   |   | |───── update-car.component.ts
 │   │   │   │   |   |   | |───── update-car.component.spec.ts
+|   |   |   |   |─── delete-car/
+│   │   │   │   |   |   | |───── delete-car.component.ts
+│   │   │   │   |   |   | |───── delete-car.component.spec.ts
 │   │   ├── corre/
 │   │   │   ├── services/
 |   |   |   |   |────── add-car/
