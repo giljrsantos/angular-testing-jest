@@ -1,5 +1,4 @@
-import { IUpdateCarRequest } from "../../app/shared/interface/i-update-car-request";
-
+import { IUpdateCarRequest } from '../../app/shared/interface/i-update-car-request';
 
 export const mockUpdateCar: IUpdateCarRequest = {
   id: 1,

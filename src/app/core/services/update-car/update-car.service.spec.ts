@@ -29,11 +29,9 @@ describe('UpdateCarService', () => {
   it('deve chamar http put para atualizar os dados do carro', () => {
     const id: number = 1;
     jest.spyOn(httpClient, 'put');
-    service
-      .updateCar(mockUpdateCar)
-      .subscribe((res) => {
-        expect(res).toEqual(mockCar);
-      });
+    service.updateCar(mockUpdateCar).subscribe((res) => {
+      expect(res).toEqual(mockCar);
+    });
   });
 
   it('deve chamar o método de função updateCar() PUT na URL correta', () => {
@@ -56,10 +54,8 @@ describe('UpdateCarService', () => {
     const error = new Error('error');
     const spy = jest.spyOn(httpClient, 'put');
     spy.mockReturnValueOnce(throwError(() => error));
-    service
-      .updateCar(mockUpdateCar)
-      .subscribe((res) => {
-        expect(res).toBeUndefined();
-      });
+    service.updateCar(mockUpdateCar).subscribe((res) => {
+      expect(res).toBeUndefined();
+    });
   });
 });

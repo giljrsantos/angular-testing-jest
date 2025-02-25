@@ -1,4 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+} from '@angular/core/testing';
 
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -10,7 +13,7 @@ import { AddCarComponent } from './add-car.component';
 describe('AddCarComponent', () => {
   let component: AddCarComponent;
   let fixture: ComponentFixture<AddCarComponent>;
-  let httpClientMock: jest.Mocked<HttpClient>;;
+  let httpClientMock: jest.Mocked<HttpClient>;
   let serviceAddCar: jest.Mocked<AddCarService>;
 
   beforeEach(async () => {
@@ -19,9 +22,8 @@ describe('AddCarComponent', () => {
     };
 
     httpClientMock = {
-      post: jest.fn()
+      post: jest.fn(),
     } as any;
-
 
     await TestBed.configureTestingModule({
       imports: [AddCarComponent, HttpClientTestingModule],
@@ -36,12 +38,13 @@ describe('AddCarComponent', () => {
           useValue: httpClientMock,
         },
       ],
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AddCarComponent);
     component = fixture.componentInstance;
-    serviceAddCar = TestBed.inject(AddCarService) as jest.Mocked<AddCarService>;
+    serviceAddCar = TestBed.inject(
+      AddCarService,
+    ) as jest.Mocked<AddCarService>;
     fixture.detectChanges();
   });
 
@@ -63,11 +66,12 @@ describe('AddCarComponent', () => {
 
     it('deve lidar com erro ao chamar postAddCar()', () => {
       const mockError = new Error('error');
-      serviceAddCar.addCar.mockReturnValue(throwError(() => mockError));
+      serviceAddCar.addCar.mockReturnValue(
+        throwError(() => mockError),
+      );
       component.postAddCar(mockCars[0]);
       expect(component.cadastrado).toBe(false);
       expect(component.oneCar).toBeUndefined();
     });
   });
-
 });

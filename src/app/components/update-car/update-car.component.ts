@@ -7,22 +7,21 @@ import { IUpdateCarRequest } from '../../shared/interface/i-update-car-request';
   standalone: true,
   imports: [],
   templateUrl: './update-car.component.html',
-  styleUrl: './update-car.component.scss'
+  styleUrl: './update-car.component.scss',
 })
 export class UpdateCarComponent {
-
-  private readonly updateCarService = inject(UpdateCarService)
+  private readonly updateCarService = inject(
+    UpdateCarService,
+  );
 
   updateCar: IUpdateCarRequest | undefined;
   carUpdate: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   putCar(bodyCar: IUpdateCarRequest) {
-
     this.updateCarService.updateCar(bodyCar).subscribe({
       next: (res) => {
         this.updateCar = res;
@@ -30,8 +29,7 @@ export class UpdateCarComponent {
       },
       error: (error) => {
         this.carUpdate = false;
-      }
+      },
     });
   }
-
 }

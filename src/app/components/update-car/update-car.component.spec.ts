@@ -1,4 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+} from '@angular/core/testing';
 
 import { UpdateCarComponent } from './update-car.component';
 import { HttpClient } from '@angular/common/http';
@@ -13,15 +16,13 @@ describe('UpdateCarComponent', () => {
   let serviceUpdateCar: jest.Mocked<UpdateCarService>;
 
   beforeEach(async () => {
-
     const serviceUpdateCarMock = {
       updateCar: jest.fn(),
     };
 
     httpClientMock = {
-      put: jest.fn()
+      put: jest.fn(),
     } as any;
-
 
     await TestBed.configureTestingModule({
       imports: [UpdateCarComponent],
@@ -40,7 +41,9 @@ describe('UpdateCarComponent', () => {
 
     fixture = TestBed.createComponent(UpdateCarComponent);
     component = fixture.componentInstance;
-    serviceUpdateCar = TestBed.inject(UpdateCarService) as jest.Mocked<UpdateCarService>;
+    serviceUpdateCar = TestBed.inject(
+      UpdateCarService,
+    ) as jest.Mocked<UpdateCarService>;
     fixture.detectChanges();
   });
 
@@ -53,25 +56,25 @@ describe('UpdateCarComponent', () => {
   });
 
   describe('updateCar', () => {
-
     it('deve atualizar o carro e retornar o carro atualizado', () => {
       const bodyCar = mockUpdateCar;
-      serviceUpdateCar.updateCar.mockReturnValue(of(bodyCar));
+      serviceUpdateCar.updateCar.mockReturnValue(
+        of(bodyCar),
+      );
       component.putCar(bodyCar);
       expect(component.carUpdate).toBe(true);
       expect(component.updateCar).toEqual(bodyCar);
     });
 
     it('deve lidar com erro no momento de atualizar o carro', () => {
-      const error =  new Error('Error');
+      const error = new Error('Error');
       const bodyCar = mockUpdateCar;
-      serviceUpdateCar.updateCar.mockReturnValue(throwError(() => error));
+      serviceUpdateCar.updateCar.mockReturnValue(
+        throwError(() => error),
+      );
       component.putCar(bodyCar);
       expect(component.carUpdate).toBe(false);
-      expect(component.updateCar).toBeUndefined()
+      expect(component.updateCar).toBeUndefined();
     });
-
   });
-
-
 });

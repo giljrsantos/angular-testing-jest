@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { IAddCarRequest } from '../../../shared/interface/i-add-car-request';
 import { ISearchCarResponse } from '../../../shared/interface/i-search-car-response';
 
-
 @Injectable({
   providedIn: 'root',
 })

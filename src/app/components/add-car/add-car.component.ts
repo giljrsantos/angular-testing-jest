@@ -9,17 +9,15 @@ import { IAddCarRequest } from '../../shared/interface/i-add-car-request';
   standalone: true,
   imports: [],
   templateUrl: './add-car.component.html',
-  styleUrl: './add-car.component.scss'
+  styleUrl: './add-car.component.scss',
 })
 export class AddCarComponent {
-
   cadastrado: boolean = false;
   oneCar: ISearchCarResponse | undefined;
 
   private readonly addCarService = inject(AddCarService);
 
   postAddCar(bodyCar: IAddCarRequest) {
-
     this.addCarService.addCar(bodyCar).subscribe({
       next: (res) => {
         this.oneCar = res;
@@ -27,9 +25,7 @@ export class AddCarComponent {
       },
       error: (error) => {
         this.cadastrado = false;
-      }
+      },
     });
-
   }
-
 }

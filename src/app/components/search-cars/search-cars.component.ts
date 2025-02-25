@@ -3,7 +3,6 @@ import { SearchCarsService } from '../../core/services/search-cars/search-cars.s
 import { ISearchCarResponse } from '../../shared/interface/i-search-car-response';
 import { ISearchCarRequest } from '../../shared/interface/i-search-car-request';
 
-
 @Component({
   selector: 'app-search-cars',
   standalone: true,
@@ -11,8 +10,7 @@ import { ISearchCarRequest } from '../../shared/interface/i-search-car-request';
   templateUrl: './search-cars.component.html',
   styleUrl: './search-cars.component.scss',
 })
-export class SearchCarsComponent{
-
+export class SearchCarsComponent {
   listCars: ISearchCarResponse[] = [];
   oneCar: ISearchCarResponse | undefined;
 

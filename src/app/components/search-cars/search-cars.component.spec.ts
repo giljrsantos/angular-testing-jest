@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+} from '@angular/core/testing';
 import { of, throwError } from 'rxjs';
 import { mockCars } from '../../../assets/mock/m-cars-response.mock';
 import { SearchCarsService } from '../../core/services/search-cars/search-cars.service';
@@ -45,7 +48,6 @@ describe('SearchCarsComponent', () => {
   });
 
   describe('getSearchCars', () => {
-
     it('deve retornar uma lista de carros ao chamar getSearchCars()', () => {
       serviceCars.getCars.mockReturnValue(of(mockCars));
       component.getSearchCars();
@@ -62,14 +64,14 @@ describe('SearchCarsComponent', () => {
       expect(component.listCars.length).toBe(0);
       expect(component.listCars).toStrictEqual([]);
     });
-
   });
 
   describe('getSearchCarById', () => {
-
     it('deve retornar um carro ao chamar getSearchCarById()', () => {
       const id = 1;
-      serviceCars.getCarsId.mockReturnValue(of(mockCars[0]));
+      serviceCars.getCarsId.mockReturnValue(
+        of(mockCars[0]),
+      );
       component.getSearchCarById({ id });
       expect(component.oneCar).toEqual(mockCars[0]);
     });
@@ -83,7 +85,5 @@ describe('SearchCarsComponent', () => {
       component.getSearchCarById({ id });
       expect(component.oneCar).toBeUndefined();
     });
-
   });
-
 });
