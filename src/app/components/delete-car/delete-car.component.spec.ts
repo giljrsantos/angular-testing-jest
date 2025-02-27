@@ -1,8 +1,4 @@
-import {
-  ComponentFixture,
-  TestBed,
-} from '@angular/core/testing';
-
+import { ComponentFixture,  TestBed } from '@angular/core/testing';
 import { of, throwError } from 'rxjs';
 import { DeleteCarService } from '../../core/services/delete-car/delete-car.service';
 import { DeleteCarComponent } from './delete-car.component';
@@ -10,7 +6,6 @@ import { DeleteCarComponent } from './delete-car.component';
 describe('DeleteCarComponent', () => {
   let component: DeleteCarComponent;
   let fixture: ComponentFixture<DeleteCarComponent>;
-
   let serviceDeleteCar: jest.Mocked<DeleteCarService>;
 
   beforeEach(async () => {
