@@ -30,7 +30,7 @@ describe('HomeComponent', () => {
   it('deve navegar para a tela de busca de carros', () => {
     const spy = jest.spyOn(router, 'navigate');
     component.navigateToSearchCar();
-    expect(spy).toHaveBeenCalledWith(['search-cars']);
+    expect(spy).toHaveBeenCalledWith(['search-car']);
   });
 
   it('deve navegar para rota adicionar carro', () => {

@@ -30,7 +30,7 @@ export class HomeComponent {
 /******  2cbfaf9e-572c-4303-be00-a2d5c9af1d6e  *******/
   navigateToSearchCar() {
     this.ngZone.run(() => {
-      this.router.navigate(['search-cars']);
+      this.router.navigate(['search-car']);
     });
   }
 
