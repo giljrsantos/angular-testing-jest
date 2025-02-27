@@ -19,7 +19,7 @@ export class DeleteCarComponent implements OnInit {
 
   deleteCar(id: number) {
     this.deleteCarService.deleteCar(id).subscribe({
-      next: (res) => {
+      next: () => {
         this.carDelete = true;
       },
       error: (error) => {
