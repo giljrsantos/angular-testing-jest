@@ -128,6 +128,9 @@ angular-testing-jest/
 │── src/
 │   ├── app/
 │   │   ├── components/
+|   |   |   |   |─── home/
+│   │   │   │   |   |  |─ home.component.ts
+│   │   │   │   |   |  |─ home.component.ts.spec.ts
 |   |   |   |   |─── search-cars/
 │   │   │   │   |   |   | |───── search-cars.component.ts
 │   │   │   │   |   |   | |───── search-cars.component.spec.ts
