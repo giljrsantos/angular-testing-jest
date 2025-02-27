@@ -160,6 +160,13 @@ angular-testing-jest/
 │   │   │   |   | |────── i-search-car-request.ts
 │   │   │   |   | |────── i-search-car-response.ts
 │   │   │   |   | |────── i-update-car-response.ts
+│   │   │   ├── util/
+|   |   |   |   |──function/
+│   │   │   │   |  | | |─── gerarDataAtual.ts
+│   │   │   │   |  | | |─── gerarDataAtual.spec.ts
+|   |   |   |   |──pipe/
+│   │   │   │   |  |─── formata-placa.pipe.ts
+│   │   │   │   |  |─── formata-placa.pipe.spec.ts
 │   ├── assets/
 │   │   ├── img/
 │   │   ├── mock/
