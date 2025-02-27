@@ -18,7 +18,6 @@ describe('DeleteCarComponent', () => {
       deleteCar: jest.fn(),
     };
 
-
     await TestBed.configureTestingModule({
       imports: [DeleteCarComponent],
       providers: [
@@ -26,7 +25,7 @@ describe('DeleteCarComponent', () => {
         {
           provide: DeleteCarService,
           useValue: serviceDeleteCarMock,
-        }
+        },
       ],
     }).compileComponents();
 
@@ -47,28 +46,25 @@ describe('DeleteCarComponent', () => {
   });
 
   describe('deleteCar', () => {
+    it('deve deletar o carro com o id informado', () => {
+      const id: number = 1;
+      jest.spyOn(serviceDeleteCar, 'deleteCar');
+      serviceDeleteCar.deleteCar.mockReturnValue(of({}));
+      component.deleteCar(id);
+      expect(
+        serviceDeleteCar.deleteCar,
+      ).toHaveBeenCalledWith(id);
+      expect(component.carDelete).toBe(true);
+    });
 
-      it('deve deletar o carro com o id informado', () => {
-        const id: number = 1;
-        jest.spyOn(serviceDeleteCar, 'deleteCar');
-        serviceDeleteCar.deleteCar.mockReturnValue(of({}));
-        component.deleteCar(id);
-        expect(serviceDeleteCar.deleteCar).toHaveBeenCalledWith(
-          id,
-        );
-        expect(component.carDelete).toBe(true);
-      });
-
-      it('deve lidar com erro ao deletar o carro', () => {
-        const id: number = 1;
-        const error = new Error('error');
-        serviceDeleteCar.deleteCar.mockReturnValue(
-          throwError(() => error),
-        );
-        component.deleteCar(id);
-        expect(component.carDelete).toBe(false);
-      });
-
+    it('deve lidar com erro ao deletar o carro', () => {
+      const id: number = 1;
+      const mockError = new Error('error');
+      serviceDeleteCar.deleteCar.mockReturnValue(
+        throwError(() => mockError),
+      );
+      component.deleteCar(id);
+      expect(component.carDelete).toBe(false);
+    });
   });
-
 });
