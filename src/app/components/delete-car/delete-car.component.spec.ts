@@ -45,7 +45,7 @@ describe('DeleteCarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('deleteCar', () => {
+  describe('deleteCar()', () => {
     it('deve deletar o carro com o id informado', () => {
       const id: number = 1;
       jest.spyOn(serviceDeleteCar, 'deleteCar');
