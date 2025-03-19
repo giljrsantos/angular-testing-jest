@@ -120,6 +120,62 @@ describe('HelloComponent', () => {
 
 
 ```
+### 📌 Testando um Pipe
+
+Testes unitários de pipe, garantem o correto funcionamento individual , facilitando a detecção de erros e a manutenção do código.
+
+Exemplo:
+```ts
+// real.pipe.ts
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'real'
+})
+export class RealPipe implements PipeTransform {
+  transform(value: number | string): string {
+    if (value === null || value === undefined || isNaN(Number(value))) {
+      return 'R$ 0,00';
+    }
+
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(Number(value));
+  }
+}
+
+
+// real.pipe.spec.ts
+import { RealPipe } from './real.pipe';
+
+describe('RealPipe', () => {
+  let pipe: RealPipe;
+
+  beforeEach(() => {
+    pipe = new RealPipe();
+  });
+
+  it('deve criar uma instância', () => {
+    expect(pipe).toBeTruthy();
+  });
+
+  it('deve formatar números corretamente para reais', () => {
+    expect(pipe.transform(10)).toBe('R$ 10,00');
+    expect(pipe.transform(1000.5)).toBe('R$ 1.000,50');
+    expect(pipe.transform('2500')).toBe('R$ 2.500,00');
+  });
+
+  it('deve retornar "R$ 0,00" para valores inválidos', () => {
+    expect(pipe.transform(null)).toBe('R$ 0,00');
+    expect(pipe.transform(undefined)).toBe('R$ 0,00');
+    expect(pipe.transform('abc')).toBe('R$ 0,00');
+  });
+});
+
+
+
+```
 
 ## 🏗️ Estrutura do Projeto
 

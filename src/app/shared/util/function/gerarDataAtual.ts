@@ -4,4 +4,5 @@ export const gerarDataAtualComHora = () => {
     hour: '2-digit'
   });
   return `${dataAtual} às ${horaAtual}h`;
+  // return 18/03/2025 às 19h
 };
