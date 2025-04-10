@@ -10,6 +10,13 @@ Este projeto tem como objetivo demonstrar a implementação de testes unitários
 - Node.js 18 - Ambiente de execução para o Angular CLI.
 - TypeScript - Linguagem utilizada para desenvolvimento.
 
+## 🧪 Desistalando Jasmine e Instalando o Jest
+
+Por padrão, o Angular vem configurado com o Jasmine como framework de testes. No entanto, neste projeto, substituí o Jasmine pelo Jest.
+
+Para quem quiser fazer o mesmo, deixei disponível no repositório um passo a passo explicando como desinstalar o Jasmine e instalar/configurar o Jest no Angular.<br/>
+Repostório: [config-jest-angular](https://github.com/giljrsantos/config-jest-angular)
+
 
 
 ## 🛠️ Configuração e Instalação
